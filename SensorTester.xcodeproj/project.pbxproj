@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C17E9081BB184D5001E3A17 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 5C17E9061BB184D5001E3A17 /* LICENSE */; settings = {ASSET_TAGS = (); }; };
-		5C17E9091BB184D5001E3A17 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 5C17E9071BB184D5001E3A17 /* README.md */; settings = {ASSET_TAGS = (); }; };
+		5C17E9081BB184D5001E3A17 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 5C17E9061BB184D5001E3A17 /* LICENSE */; };
 		5C2F564A1B9CFB16003A8725 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C2F56481B9CFB16003A8725 /* FontAwesome.ttf */; };
 		5C2F564D1B9D0653003A8725 /* StringFontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2F564C1B9D0653003A8725 /* StringFontAwesome.swift */; };
 		5C2F564F1B9D465B003A8725 /* NetworkRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2F564E1B9D465B003A8725 /* NetworkRemote.swift */; };
@@ -38,16 +37,6 @@
 		5CF5424B1BAB97D700A5B8F5 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF5424A1BAB97D700A5B8F5 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		5C45EF7F1B9959A100E629F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5C45EF611B9959A000E629F4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5C45EF681B9959A000E629F4;
-			remoteInfo = SensorTester;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		5C17E9061BB184D5001E3A17 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		5C17E9071BB184D5001E3A17 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
@@ -74,7 +63,6 @@
 		5C45EF731B9959A000E629F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C45EF751B9959A000E629F4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5C45EF781B9959A000E629F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		5C45EF7E1B9959A100E629F4 /* SensorTesterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SensorTesterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C598F091BAA75E300944FFF /* ServerMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerMessageHandler.swift; sourceTree = "<group>"; };
 		5CA6015A1BAA417B00602413 /* NetworkServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServer.swift; sourceTree = "<group>"; };
 		5CC3738C1BAAA447009D3463 /* FantasticRawNetworkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FantasticRawNetworkHandler.swift; sourceTree = "<group>"; };
@@ -85,13 +73,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		5C45EF661B9959A000E629F4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5C45EF7B1B9959A100E629F4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -135,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				5C45EF691B9959A000E629F4 /* SensorTester.app */,
-				5C45EF7E1B9959A100E629F4 /* SensorTesterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,24 +171,6 @@
 			productReference = 5C45EF691B9959A000E629F4 /* SensorTester.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5C45EF7D1B9959A100E629F4 /* SensorTesterTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5C45EF8B1B9959A100E629F4 /* Build configuration list for PBXNativeTarget "SensorTesterTests" */;
-			buildPhases = (
-				5C45EF7A1B9959A100E629F4 /* Sources */,
-				5C45EF7B1B9959A100E629F4 /* Frameworks */,
-				5C45EF7C1B9959A100E629F4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5C45EF801B9959A100E629F4 /* PBXTargetDependency */,
-			);
-			name = SensorTesterTests;
-			productName = SensorTesterTests;
-			productReference = 5C45EF7E1B9959A100E629F4 /* SensorTesterTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -223,10 +185,6 @@
 					5C45EF681B9959A000E629F4 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = W9N7LJXXSV;
-					};
-					5C45EF7D1B9959A100E629F4 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 5C45EF681B9959A000E629F4;
 					};
 				};
 			};
@@ -244,7 +202,6 @@
 			projectRoot = "";
 			targets = (
 				5C45EF681B9959A000E629F4 /* SensorTester */,
-				5C45EF7D1B9959A100E629F4 /* SensorTesterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -262,13 +219,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5C45EF7C1B9959A100E629F4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -282,7 +232,6 @@
 				5C45EF711B9959A000E629F4 /* ViewController.swift in Sources */,
 				5C2F56801BA122CA003A8725 /* SensorColorNotificationMessage.swift in Sources */,
 				5C2F56821BA12AB6003A8725 /* SensorNotificationMessage.swift in Sources */,
-				5C17E9091BB184D5001E3A17 /* README.md in Sources */,
 				5C598F0A1BAA75E300944FFF /* ServerMessageHandler.swift in Sources */,
 				5C2F567C1BA1122F003A8725 /* BaseMessageHandler.swift in Sources */,
 				5C2F56721B9FFFBD003A8725 /* RemoteCommandMessage.swift in Sources */,
@@ -303,22 +252,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5C45EF7A1B9959A100E629F4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		5C45EF801B9959A100E629F4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5C45EF681B9959A000E629F4 /* SensorTester */;
-			targetProxy = 5C45EF7F1B9959A100E629F4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5C45EF721B9959A000E629F4 /* Main.storyboard */ = {
@@ -451,42 +385,6 @@
 			};
 			name = Release;
 		};
-		5C45EF8C1B9959A100E629F4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SensorTesterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.innovation.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SensorTester.app/SensorTester";
-			};
-			name = Debug;
-		};
-		5C45EF8D1B9959A100E629F4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SensorTesterTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.innovation.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SensorTester.app/SensorTester";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -504,15 +402,6 @@
 			buildConfigurations = (
 				5C45EF891B9959A100E629F4 /* Debug */,
 				5C45EF8A1B9959A100E629F4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5C45EF8B1B9959A100E629F4 /* Build configuration list for PBXNativeTarget "SensorTesterTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5C45EF8C1B9959A100E629F4 /* Debug */,
-				5C45EF8D1B9959A100E629F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

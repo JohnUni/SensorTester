@@ -76,7 +76,7 @@ class NetworkRemote : NSObject
         m_arrayHandlers.removeAll(keepCapacity: true)
         m_arrayHandlers.append(callbackHandler)
         
-        let threadNetwork: NSThread = NSThread(target:self, selector:"threadNetworkFunc:", object:nil)
+        let threadNetwork: NSThread = NSThread(target:self, selector:#selector(NetworkRemote.threadNetworkFunc(_:)), object:nil)
         threadNetwork.start()
         
         return bRet

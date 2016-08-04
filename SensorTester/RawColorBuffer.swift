@@ -82,7 +82,7 @@ public class DataBuffer<T> : NSObject
         if( Int32(m_arrayRawBuffer.count) < m_nBufferSize )
         {
             m_arrayRawBuffer.append( data )
-            m_nCurrentPosition++
+            m_nCurrentPosition += 1
         }
         else if(Int32(m_arrayRawBuffer.count) == m_nBufferSize)
         {
@@ -92,7 +92,7 @@ public class DataBuffer<T> : NSObject
             }
             
             m_arrayRawBuffer[Int(m_nCurrentPosition)] = data
-            m_nCurrentPosition++
+            m_nCurrentPosition += 1
         }
         else
         {

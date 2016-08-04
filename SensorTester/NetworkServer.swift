@@ -76,7 +76,7 @@ class NetworkServer : NSObject
         m_arrayHandlers.removeAll(keepCapacity: true)
         m_arrayHandlers.append(callbackHandler)
         
-        let threadNetwork: NSThread = NSThread(target:self, selector:"threadNetworkFunc:", object:nil)
+        let threadNetwork: NSThread = NSThread(target:self, selector:#selector(NetworkServer.threadNetworkFunc(_:)), object:nil)
         threadNetwork.start()
         
         return bRet
@@ -175,7 +175,7 @@ class NetworkServer : NSObject
                 }
             }
             
-            for( var i: Int = m_arrayClients.count-1; i >= 0 ; i-- )
+            for( var i: Int = m_arrayClients.count-1; i >= 0 ; i -= 1 )
             {
                 let client: AsyncTcpClientSocket = m_arrayClients[i]
                 let nStatus: enumAsyncSocketStatus = client.getSocketStatus()

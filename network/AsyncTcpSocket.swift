@@ -51,23 +51,23 @@
 import Foundation
 
 // server socket
-@asmname("tcpsocket_listen") func c_tcpsocket_listen(serveraddress: UnsafePointer<UInt8>, port: Int32) -> Int32
-@asmname("tcpsocket_accept") func c_tcpsocket_accept(serversocketfd: Int32, remoteip: UnsafePointer<UInt8>, remoteport: UnsafePointer<Int32>) -> Int32
+@_silgen_name("tcpsocket_listen") func c_tcpsocket_listen(serveraddress: UnsafePointer<UInt8>, port: Int32) -> Int32
+@_silgen_name("tcpsocket_accept") func c_tcpsocket_accept(serversocketfd: Int32, remoteip: UnsafePointer<UInt8>, remoteport: UnsafePointer<Int32>) -> Int32
 // server check acceptable
-@asmname("is_listened") func c_is_listened(socketfd: Int32) -> Int32
-@asmname("is_acceptable") func c_is_acceptable(socketfd: Int32) -> Int32
+@_silgen_name("is_listened") func c_is_listened(socketfd: Int32) -> Int32
+@_silgen_name("is_acceptable") func c_is_acceptable(socketfd: Int32) -> Int32
 
 // client socket
-@asmname("tcpsocket_connect") func c_tcpsocket_connect(host: UnsafePointer<UInt8>, port: Int32) -> Int32
-@asmname("tcpsocket_send") func c_tcpsocket_send(socketfd: Int32, buffer: UnsafePointer<UInt8>, datalen: Int32) -> Int32
-@asmname("tcpsocket_recv") func c_tcpsocket_recv(socketfd: Int32, buffer: UnsafePointer<UInt8>, buffersize: Int32, recvdatalen: UnsafePointer<Int32>) -> Int32
+@_silgen_name("tcpsocket_connect") func c_tcpsocket_connect(host: UnsafePointer<UInt8>, port: Int32) -> Int32
+@_silgen_name("tcpsocket_send") func c_tcpsocket_send(socketfd: Int32, buffer: UnsafePointer<UInt8>, datalen: Int32) -> Int32
+@_silgen_name("tcpsocket_recv") func c_tcpsocket_recv(socketfd: Int32, buffer: UnsafePointer<UInt8>, buffersize: Int32, recvdatalen: UnsafePointer<Int32>) -> Int32
 // client check connected, readable and writable
-@asmname("is_connected") func c_is_connected(socketfd: Int32) -> Int32
-@asmname("is_readable") func c_is_readable(socketfd: Int32) -> Int32
-@asmname("is_writable") func c_is_writable(socketfd: Int32) -> Int32
+@_silgen_name("is_connected") func c_is_connected(socketfd: Int32) -> Int32
+@_silgen_name("is_readable") func c_is_readable(socketfd: Int32) -> Int32
+@_silgen_name("is_writable") func c_is_writable(socketfd: Int32) -> Int32
 
 // close socket
-@asmname("tcpsocket_close") func c_tcpsocket_close(socketfd: Int32) -> Int32
+@_silgen_name("tcpsocket_close") func c_tcpsocket_close(socketfd: Int32) -> Int32
 
 public enum enumAsyncSocketStatus: Int32
 {
@@ -146,7 +146,7 @@ public class AsyncTcpServerSocket : AsyncTcpSocket
         {
             m_nServerSocketStatus = .ASYNC_SOCKET_STATUS_INIT
             
-            //@asmname("tcpsocket_listen") func c_tcpsocket_listen(serveraddress: UnsafePointer<Int8>, port: Int32) -> Int32
+            //@_silgen_name("tcpsocket_listen") func c_tcpsocket_listen(serveraddress: UnsafePointer<Int8>, port: Int32) -> Int32
             // RETURN VALUES of socket_fd: fd>0 success, fd<0 failure
             //  expected status: initial => in-processing or failure
             let nListen: Int32 = c_tcpsocket_listen( host, port: port )
@@ -219,7 +219,7 @@ public class AsyncTcpServerSocket : AsyncTcpSocket
         return bRet
     }
 
-    //@asmname("is_acceptable") func c_is_acceptable(socketfd: Int32) -> Int32
+    //@_silgen_name("is_acceptable") func c_is_acceptable(socketfd: Int32) -> Int32
     public func isAcceptable() -> Bool
     {
         var bRet: Bool = false
@@ -256,7 +256,7 @@ public class AsyncTcpServerSocket : AsyncTcpSocket
         return bRet
     }
 
-    //@asmname("tcpsocket_accept") func c_tcpsocket_accept(serversocketfd: Int32, remoteip: UnsafePointer<Int8>, remoteport: UnsafePointer<Int32>) -> Int32
+    //@_silgen_name("tcpsocket_accept") func c_tcpsocket_accept(serversocketfd: Int32, remoteip: UnsafePointer<Int8>, remoteport: UnsafePointer<Int32>) -> Int32
     public func acceptClient() -> AsyncTcpClientSocket?
     {
         var pClient: AsyncTcpClientSocket?
@@ -334,7 +334,7 @@ public class AsyncTcpClientSocket : AsyncTcpSocket
         if( .ASYNC_SOCKET_STATUS_UNKNOWN == m_nClientSocketStatus )
         {
             m_nClientSocketStatus = .ASYNC_SOCKET_STATUS_INIT
-            //@asmname("tcpsocket_connect") func c_tcpsocket_connect(host: UnsafePointer<Int8>, port: Int32) -> Int32
+            //@_silgen_name("tcpsocket_connect") func c_tcpsocket_connect(host: UnsafePointer<Int8>, port: Int32) -> Int32
             // RETURN VALUES of socket_fd: fd>0 success, fd<0 failure
             //   expected status: initial => in-processing or failure
             let nConnect: Int32 = c_tcpsocket_connect( host, port: port )
@@ -363,7 +363,7 @@ public class AsyncTcpClientSocket : AsyncTcpSocket
         return bRet
     }
     
-    //@asmname("is_connected") func c_is_connected(socketfd: Int32) -> Int32
+    //@_silgen_name("is_connected") func c_is_connected(socketfd: Int32) -> Int32
     public func isConnected() -> Bool
     {
         var bRet: Bool = false
@@ -408,7 +408,7 @@ public class AsyncTcpClientSocket : AsyncTcpSocket
         return bRet
     }
     
-    //@asmname("is_writable") func c_is_writable(socketfd: Int32) -> Int32
+    //@_silgen_name("is_writable") func c_is_writable(socketfd: Int32) -> Int32
     public func isWritable() -> Bool
     {
         var bRet: Bool = false
@@ -445,7 +445,7 @@ public class AsyncTcpClientSocket : AsyncTcpSocket
         return bRet
     }
     
-    //@asmname("is_readable") func c_is_readable(socketfd: Int32) -> Int32
+    //@_silgen_name("is_readable") func c_is_readable(socketfd: Int32) -> Int32
     public func isReadable() -> Bool
     {
         var bRet: Bool = false
@@ -630,7 +630,7 @@ public class AsyncTcpClientSocket : AsyncTcpSocket
         var bRet: Bool = false
         var nSendCount: Int32 = -1
         
-        m_nMessageQueueId++
+        m_nMessageQueueId += 1
         message.updateMessageId( m_nMessageQueueId )
         
         let data: NSData? = message.getMessageBuffer()

@@ -127,36 +127,36 @@ class ViewController: UIViewController, IMessageHandler {
         buttonLeft.tag = enumButtonIndex.BUTTON_LEFT.rawValue
         buttonRight.tag = enumButtonIndex.BUTTON_RIGHT.rawValue
         
-        buttonForward.addTarget(self, action: "touchedDown:", forControlEvents: UIControlEvents.TouchDown)
-        buttonBackward.addTarget(self, action: "touchedDown:", forControlEvents: UIControlEvents.TouchDown)
-        buttonLeft.addTarget(self, action: "touchedDown:", forControlEvents: UIControlEvents.TouchDown)
-        buttonRight.addTarget(self, action: "touchedDown:", forControlEvents: UIControlEvents.TouchDown)
+        buttonForward.addTarget(self, action: #selector(ViewController.touchedDown(_:)), forControlEvents: UIControlEvents.TouchDown)
+        buttonBackward.addTarget(self, action: #selector(ViewController.touchedDown(_:)), forControlEvents: UIControlEvents.TouchDown)
+        buttonLeft.addTarget(self, action: #selector(ViewController.touchedDown(_:)), forControlEvents: UIControlEvents.TouchDown)
+        buttonRight.addTarget(self, action: #selector(ViewController.touchedDown(_:)), forControlEvents: UIControlEvents.TouchDown)
         
-        buttonForward.addTarget(self, action: "touchedUpInside:", forControlEvents: UIControlEvents.TouchUpInside)
-        buttonBackward.addTarget(self, action: "touchedUpInside:", forControlEvents: UIControlEvents.TouchUpInside)
-        buttonLeft.addTarget(self, action: "touchedUpInside:", forControlEvents: UIControlEvents.TouchUpInside)
-        buttonRight.addTarget(self, action: "touchedUpInside:", forControlEvents: UIControlEvents.TouchUpInside)
+        buttonForward.addTarget(self, action: #selector(ViewController.touchedUpInside(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        buttonBackward.addTarget(self, action: #selector(ViewController.touchedUpInside(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        buttonLeft.addTarget(self, action: #selector(ViewController.touchedUpInside(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        buttonRight.addTarget(self, action: #selector(ViewController.touchedUpInside(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
-        buttonForward.addTarget(self, action: "touchedUpOutside:", forControlEvents: UIControlEvents.TouchUpOutside)
-        buttonBackward.addTarget(self, action: "touchedUpOutside:", forControlEvents: UIControlEvents.TouchUpOutside)
-        buttonLeft.addTarget(self, action: "touchedUpOutside:", forControlEvents: UIControlEvents.TouchUpOutside)
-        buttonRight.addTarget(self, action: "touchedUpOutside:", forControlEvents: UIControlEvents.TouchUpOutside)
+        buttonForward.addTarget(self, action: #selector(ViewController.touchedUpOutside(_:)), forControlEvents: UIControlEvents.TouchUpOutside)
+        buttonBackward.addTarget(self, action: #selector(ViewController.touchedUpOutside(_:)), forControlEvents: UIControlEvents.TouchUpOutside)
+        buttonLeft.addTarget(self, action: #selector(ViewController.touchedUpOutside(_:)), forControlEvents: UIControlEvents.TouchUpOutside)
+        buttonRight.addTarget(self, action: #selector(ViewController.touchedUpOutside(_:)), forControlEvents: UIControlEvents.TouchUpOutside)
 
         // buttonBrake
         buttonBrake.tag = enumButtonIndex.BUTTON_BRAKE.rawValue
-        buttonBrake.addTarget(self, action: "touchedDown:", forControlEvents: UIControlEvents.TouchDown)
+        buttonBrake.addTarget(self, action: #selector(ViewController.touchedDown(_:)), forControlEvents: UIControlEvents.TouchDown)
 
         // buttonSpeedUp, buttonSpeedDown
         buttonSpeedUp.tag = enumButtonIndex.BUTTON_SPEEDUP.rawValue
-        buttonSpeedUp.addTarget(self, action: "touchedDown:", forControlEvents: UIControlEvents.TouchDown)
+        buttonSpeedUp.addTarget(self, action: #selector(ViewController.touchedDown(_:)), forControlEvents: UIControlEvents.TouchDown)
         buttonSpeedDown.tag = enumButtonIndex.BUTTON_SPEEDDOWN.rawValue
-        buttonSpeedDown.addTarget(self, action: "touchedDown:", forControlEvents: UIControlEvents.TouchDown)
+        buttonSpeedDown.addTarget(self, action: #selector(ViewController.touchedDown(_:)), forControlEvents: UIControlEvents.TouchDown)
         
         // buttonForwardOneUnit, buttonSpeedDown
         buttonForwardOneUnit.tag = enumButtonIndex.BUTTON_FORWARD_ONEUNIT.rawValue
-        buttonForwardOneUnit.addTarget(self, action: "touchedDown:", forControlEvents: UIControlEvents.TouchDown)
+        buttonForwardOneUnit.addTarget(self, action: #selector(ViewController.touchedDown(_:)), forControlEvents: UIControlEvents.TouchDown)
         buttonBackwardOneUnit.tag = enumButtonIndex.BUTTON_BACKWARD_ONEUNIT.rawValue
-        buttonBackwardOneUnit.addTarget(self, action: "touchedDown:", forControlEvents: UIControlEvents.TouchDown)
+        buttonBackwardOneUnit.addTarget(self, action: #selector(ViewController.touchedDown(_:)), forControlEvents: UIControlEvents.TouchDown)
 
         let fontFA: UIFont? = UIFont(name: "FontAwesome", size: 100)
         if( fontFA != nil )
@@ -406,7 +406,7 @@ class ViewController: UIViewController, IMessageHandler {
     {
         // print("timerCountUp \n")
         
-        m_nSamplingTime++
+        m_nSamplingTime += 1
         m_nTestRawRed += 0.005
         m_nTestRawGreen += 0.005
         m_nTestRawBlue += 0.005

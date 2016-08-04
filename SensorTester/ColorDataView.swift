@@ -128,7 +128,7 @@ public class ColorDataView : UIView
         let nDrawColumes: Int32 = (nBufferSize >> 6)
         
         CGContextSetStrokeColorWithColor(context, UIColor.grayColor().CGColor)
-        for( var i: Int32 = 1; i<nDrawColumes; ++i )
+        for( var i: Int32 = 1; i<nDrawColumes; i += 1 )
         {
             var points: Array<CGPoint> = Array<CGPoint>()
             let nPositionX: Double = Double(rect.width)*Double(i)/Double(nDrawColumes)
@@ -144,7 +144,7 @@ public class ColorDataView : UIView
         let MAX_ROW: Int32 = 10
         
         CGContextSetStrokeColorWithColor(context, UIColor.grayColor().CGColor)
-        for( var i: Int32 = 1; i<MAX_ROW; ++i )
+        for( var i: Int32 = 1; i<MAX_ROW; i += 1 )
         {
             var points: Array<CGPoint> = Array<CGPoint>()
             let nPositionY: Double = Double(rect.height)*Double(i)/Double(MAX_ROW)
@@ -161,7 +161,7 @@ public class ColorDataView : UIView
         let nDotRectSize: CGFloat = 2
         
         CGContextSetStrokeColorWithColor(context, UIColor.redColor().CGColor)
-        for( var i: Int32 = 1; i<nBufferSize; ++i )
+        for( var i: Int32 = 1; i<nBufferSize; i += 1 )
         {
             let rawColor: RawColor? = rawBuffer.getData( i )
             if( rawColor != nil )
@@ -180,7 +180,7 @@ public class ColorDataView : UIView
         
         CGContextSetStrokeColorWithColor(context, UIColor.greenColor().CGColor)
         //let nRawGreen: Double = rawColor.getRawGreen()
-        for( var i: Int32 = 1; i<nBufferSize; ++i )
+        for( var i: Int32 = 1; i<nBufferSize; i += 1 )
         {
             let rawColor: RawColor? = rawBuffer.getData( i )
             if( rawColor != nil )
@@ -199,7 +199,7 @@ public class ColorDataView : UIView
         
         CGContextSetStrokeColorWithColor(context, UIColor.blueColor().CGColor)
         //let nRawBlue: Double = rawColor.getRawBlue()
-        for( var i: Int32 = 1; i<nBufferSize; ++i )
+        for( var i: Int32 = 1; i<nBufferSize; i += 1 )
         {
             let rawColor: RawColor? = rawBuffer.getData( i )
             if( rawColor != nil )

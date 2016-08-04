@@ -100,7 +100,7 @@ public class FantasticRawNetworkHandler : BaseNetworkDataHandler
                 let arrayStringData: Array<String> = strValue.componentsSeparatedByString( strSplit )
                 let nCount: Int32 = Int32(arrayStringData.count)
                 
-                for( var i: Int32=0; i<nCount; i++ )
+                for( var i: Int32=0; i<nCount; i += 1 )
                 {
                     let str: String = arrayStringData[Int(i)]
                     let nStrLen: Int = str.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
